@@ -3,6 +3,7 @@ import win32api as api
 import win32con as con
 import win32clipboard as clp
 
+# copy text from clipboard
 def get_clipbd() :
     try : 
         clp.OpenClipboard()
@@ -12,7 +13,7 @@ def get_clipbd() :
     except :
         return None
 
-# 
+# set clipboard text
 def set_clipbd(text) :
     try :
         clp.OpenClipboard()
@@ -22,7 +23,7 @@ def set_clipbd(text) :
     except :
         return 
 
-# copy current selection
+# copy current highlighted text while keep original clipboard content
 def active_copy() :
     try :
         text_now = get_clipbd()
@@ -36,11 +37,7 @@ def active_copy() :
     except :
         return None
 
-
-def text_detect() :
-    content_tmp = get_clipbd()
-
-
+# return highlighted text if cursor hovering & highlight events occur simultaneously
 def hover(last_text) :
     pos_now = api.GetCursorPos()
     time.sleep(0.5)
