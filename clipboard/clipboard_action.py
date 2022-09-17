@@ -1,9 +1,7 @@
-## pip install pywin32==1.6.0
 import time
 import win32api as api
 import win32con as con
 import win32clipboard as clp
-import keyboard as kb
 
 def get_clipbd() :
     try : 
