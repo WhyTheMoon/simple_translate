@@ -1,0 +1,2 @@
+##### Requirements with Version Specifiers #####
+  - pywin32==1.6.0
